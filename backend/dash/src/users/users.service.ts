@@ -22,7 +22,7 @@ export class UserService {
         items: '',
         money: 0,
       };
-      const id = await this.userRepository.create(user);
+      const id = await this.userRepository.createById(user, createUserDto.id);
       return this.responseStrategy.success('User created successfully', {
         id,
         ...user,

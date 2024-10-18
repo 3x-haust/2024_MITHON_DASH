@@ -5,5 +5,5 @@ export class CreateUserDto {
   userName: string;
 
   @IsString()
-  imageUrl: string;
+  id: string;
 }

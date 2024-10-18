@@ -14,7 +14,4 @@ export class UpdateUserDto extends PartialType(CreateUserDto) {
 
   @IsString()
   userName: string;
-
-  @IsString()
-  imageUrl: string;
 }

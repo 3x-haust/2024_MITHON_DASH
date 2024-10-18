@@ -7,21 +7,28 @@ environment:
   sdk: ^3.5.1
 
 dependencies:
+  firebase_auth: ^5.3.1
+  firebase_core: ^3.6.0
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.1.0
   flutter_svg: ^2.0.10+1
   get: ^4.6.6
+  google_sign_in: ^6.2.1
+  health: ^11.1.0
+  permission_handler: ^11.3.1
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/icons/
+    - assets/characters/
   fonts:
     - family: Pretendard
       fonts:

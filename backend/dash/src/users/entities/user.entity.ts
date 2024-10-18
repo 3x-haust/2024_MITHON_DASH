@@ -5,5 +5,4 @@ export class User {
   createdAt: Date;
   items: string;
   money: number;
-  imageUrl: string;
 }

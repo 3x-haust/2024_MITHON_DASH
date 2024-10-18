@@ -1,11 +1,18 @@
 import 'package:dash/pages/main/HomePage.dart';
+import 'package:dash/pages/main/LoginPage.dart';
 import 'package:dash/pages/main/MainPage.dart';
 import 'package:dash/pages/main/ProfilePage.dart';
 import 'package:dash/pages/main/RankPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
+import 'firebase_options.dart';
 
-Future<void> main() async {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const MainApp());
 }
 
@@ -17,7 +24,7 @@ class MainApp extends StatefulWidget {
   _MainAppState createState() => _MainAppState();
 }
 
-class _MainAppState extends State<MainApp> {
+class _MainAppState extends State {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -26,11 +33,10 @@ class _MainAppState extends State<MainApp> {
         GetPage(name: '/rank', page: () => const RankPage()),
         GetPage(name: '/home', page: () => const HomePage()),
         GetPage(name: '/profile', page: () => const ProfilePage()),
+        GetPage(name: '/login', page: () => const LoginPage())
       ],
-      initialRoute: '/login', 
+      initialRoute: FirebaseAuth.instance.currentUser == null ? '/login' : '/',
       debugShowCheckedModeBanner: false,
     );
   }
 }
-
-

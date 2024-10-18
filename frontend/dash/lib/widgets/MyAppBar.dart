@@ -12,6 +12,8 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: const Color(0xffEDEEF1),
+      scrolledUnderElevation: 0,
       title: const Column(
         children: [
           Align(
