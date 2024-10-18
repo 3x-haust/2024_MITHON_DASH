@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { UsersModule } from './users/users.module';
-import { CharactersModule } from './characters/characters.module';
 import { ConfigModule } from '@nestjs/config';
+import { CharactersModule } from './characters/characters.module';
 
 @Module({
   imports: [

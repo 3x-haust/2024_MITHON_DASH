@@ -18,6 +18,16 @@ export class AppRepository<T> {
     return postRef.id;
   }
 
+  async createById(dto: T, id: string): Promise<string> {
+    await this.firebaseService
+      .getFirestore()
+      .collection(this.collection)
+      .doc(id)
+      .set(dto);
+
+    return id;
+  }
+
   async findAll(): Promise<T[]> {
     const snapshot = await this.firebaseService
       .getFirestore()
